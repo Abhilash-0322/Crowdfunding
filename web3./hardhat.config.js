@@ -1,5 +1,7 @@
 require("@matterlabs/hardhat-zksync-solc");
 require("@matterlabs/hardhat-zksync-verify");
+require('dotenv').config();
+require("@nomiclabs/hardhat-ethers");
 
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -30,6 +32,12 @@ module.exports = {
       verifyURL:
         "https://zksync2-mainnet-explorer.zksync.io/contract_verification",
     },
+    lineaSepolia: {
+      url: 'https://rpc.linea.build/sepolia',
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 59144,
+    },
+    hardhat: {},
   },
   // networks:{
   //   hardhat:{},
